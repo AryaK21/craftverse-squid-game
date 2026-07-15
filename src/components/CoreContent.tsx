@@ -135,7 +135,7 @@ export const CoreContent = () => {
           className="relative group cursor-pointer"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#F62A54] to-[#037A76] rounded-3xl blur-xl opacity-20 group-hover:opacity-60 transition-opacity duration-700" />
-          <div className="relative bg-[#111] border-2 border-gray-800 p-12 md:p-24 rounded-3xl overflow-hidden transition-all duration-700 group-hover:border-[#F62A54]">
+          <div className="relative bg-[#111] border-2 border-gray-800 p-6 sm:p-12 md:p-24 rounded-3xl overflow-hidden transition-all duration-700 group-hover:border-[#F62A54]">
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex-1">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 uppercase tracking-widest">
