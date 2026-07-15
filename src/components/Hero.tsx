@@ -8,7 +8,7 @@ import { Circle, Triangle, Square } from './Shapes';
 
 export const Hero = () => {
   return (
-    <section className="relative w-full h-[100vh] min-h-[800px] flex items-center justify-center overflow-hidden bg-transparent">
+    <section id="home" className="relative w-full h-[100vh] min-h-[800px] flex items-center justify-center overflow-hidden bg-transparent">
       
       {/* Background X Shapes (Teal & Pink) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">

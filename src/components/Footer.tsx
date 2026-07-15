@@ -39,6 +39,7 @@ export const Footer = () => {
 
   return (
     <motion.footer 
+      id="faqs"
       className="bg-[#020202] text-white py-20 px-6 border-t border-gray-900 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"

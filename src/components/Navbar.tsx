@@ -16,19 +16,12 @@ export const Navbar = () => {
           Craftverse
         </h1>
       </div>
-      
-      <div className="hidden md:flex items-center gap-8 text-sm text-gray-300 font-sans tracking-wide">
-        <a href="#" className="hover:text-white transition-colors">Home</a>
-        <a href="#" className="hover:text-white transition-colors">About</a>
-        <a href="#" className="hover:text-white transition-colors">Games</a>
-        <a href="#" className="hover:text-white transition-colors">Rules</a>
-        <a href="#" className="hover:text-white transition-colors">FAQs</a>
-      </div>
-
-      <div>
-        <button className="bg-[#034A46] hover:bg-[#037A76] text-white px-6 py-2.5 rounded-md font-sans text-sm font-medium transition-colors">
-          Create account
-        </button>
+      <div className="flex items-center gap-8 text-sm text-gray-300 font-sans tracking-wide">
+        <a href="#home" className="hover:text-white transition-colors">Home</a>
+        <a href="#about" className="hover:text-white transition-colors">About</a>
+        <a href="#games" className="hover:text-white transition-colors">Games</a>
+        <a href="#rules" className="hover:text-white transition-colors">Rules</a>
+        <a href="#faqs" className="hover:text-white transition-colors">FAQs</a>
       </div>
     </motion.nav>
   );

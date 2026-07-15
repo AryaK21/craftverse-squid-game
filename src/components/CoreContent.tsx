@@ -75,6 +75,7 @@ export const CoreContent = () => {
         
         {/* What is Craftverse */}
         <motion.section 
+          id="about"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -93,6 +94,7 @@ export const CoreContent = () => {
 
         {/* Success Story 1.0 */}
         <motion.section 
+          id="rules"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -123,8 +125,9 @@ export const CoreContent = () => {
           </div>
         </motion.section>
 
-        {/* Craftverse 2.0 Theme (Hover Reveal) */}
+        {/* Craftverse Squid Game Theme (Hover Reveal) */}
         <motion.section 
+          id="games"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -136,11 +139,11 @@ export const CoreContent = () => {
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex-1">
                 <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 uppercase tracking-widest">
-                  Theme 2.0
+                  Squid Game
                 </h2>
                 <p className="text-2xl text-gray-300 font-sans mb-8">
-                  The games have changed. The stakes are higher. 
-                  Will you eliminate the bugs, or will they eliminate you?
+                  The stakes have reached their peak. The rules are absolute. 
+                  Will you eliminate the bugs, or will you be eliminated?
                 </p>
               </div>
               <div className="flex-shrink-0 flex items-center justify-center gap-4">

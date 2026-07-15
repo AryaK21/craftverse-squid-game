@@ -1,46 +1,23 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const FRAME_COUNT = 192;
 
-export const VideoScrubSection = () => {
+interface VideoScrubProps {
+  images: HTMLImageElement[];
+  imagesLoaded: boolean;
+}
+
+export const VideoScrubSection = ({ images, imagesLoaded }: VideoScrubProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollPosRef = useRef(0);
   const currentFrameRef = useRef(1);
   const targetFrameRef = useRef(1);
-  const imagesRef = useRef<HTMLImageElement[]>([]);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  // Preload all frames on mount
-  useEffect(() => {
-    let loadedCount = 0;
-    const images: HTMLImageElement[] = [];
-
-    const padZero = (num: number, size: number) => {
-      let s = num + "";
-      while (s.length < size) s = "0" + s;
-      return s;
-    };
-
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      const img = new Image();
-      // Path format: /frames/frame_0001.jpg -> frame_0192.jpg
-      img.src = `/frames/frame_${padZero(i, 4)}.jpg`;
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === FRAME_COUNT) {
-          setImagesLoaded(true);
-        }
-      };
-      images.push(img);
-    }
-    imagesRef.current = images;
-  }, []);
 
   useEffect(() => {
-    if (!imagesLoaded) return;
+    if (!imagesLoaded || images.length === 0) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -61,9 +38,8 @@ export const VideoScrubSection = () => {
     let requestRef: number;
 
     const drawFrame = (frameIndex: number) => {
-      const img = imagesRef.current[frameIndex - 1];
+      const img = images[frameIndex - 1];
       if (img && img.complete) {
-        // Draw image keeping correct aspect ratio
         const canvasWidth = canvas.width;
         const canvasHeight = canvas.height;
         const imgWidth = img.width;
@@ -99,7 +75,7 @@ export const VideoScrubSection = () => {
       
       const frameDiff = targetFrameRef.current - currentFrameRef.current;
       if (Math.abs(frameDiff) > 0.05) {
-        // Easing: approach target frame at 12% per animation frame
+        // Easing
         currentFrameRef.current += frameDiff * 0.12;
         drawFrame(Math.round(currentFrameRef.current));
       }
@@ -114,28 +90,17 @@ export const VideoScrubSection = () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(requestRef);
     };
-  }, [imagesLoaded]);
+  }, [imagesLoaded, images]);
 
   return (
     <>
       {/* Canvas wrapper sits fixed behind everything globally */}
       <div ref={containerRef} className="fixed inset-0 w-full h-screen z-[-1] overflow-hidden bg-black pointer-events-none">
-        {/* Draw frames inside Canvas for 60fps buttery-smooth hardware acceleration */}
         <canvas 
           ref={canvasRef}
           className="w-full h-full object-cover opacity-55 transition-opacity duration-500"
           style={{ opacity: imagesLoaded ? 0.55 : 0 }}
         />
-        
-        {/* Loading Indicator */}
-        {!imagesLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black">
-            <div className="text-white/40 font-sans tracking-widest text-sm animate-pulse">
-              LOADING SYSTEM CYCLES...
-            </div>
-          </div>
-        )}
-        
         {/* Softer Vignette Overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.75)_100%)]" />
       </div>
