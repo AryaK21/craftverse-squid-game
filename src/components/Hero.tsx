@@ -22,19 +22,19 @@ export const Hero = () => {
 
       {/* Massive Glowing Text Background */}
       <motion.div 
-        className="absolute z-0 w-full text-center flex flex-col items-center justify-center pointer-events-none px-4"
+        className="absolute inset-0 z-0 w-full flex flex-col items-center justify-center pointer-events-none px-4"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <h1 className="text-[20vw] md:text-[15vw] leading-[0.8] font-display font-black uppercase tracking-tighter text-transparent"
+        <h1 className="text-[25vw] md:text-[15vw] leading-[0.75] font-display font-black uppercase tracking-tighter text-transparent"
             style={{
               WebkitTextStroke: '2px #F62A54',
               textShadow: '0 0 20px rgba(246, 42, 84, 0.5), 0 0 40px rgba(246, 42, 84, 0.3)'
             }}>
           CRAFT
         </h1>
-        <h1 className="text-[20vw] md:text-[15vw] leading-[0.8] font-display font-black uppercase tracking-tighter text-transparent ml-0 md:ml-20 mt-2 md:mt-0"
+        <h1 className="text-[25vw] md:text-[15vw] leading-[0.75] font-display font-black uppercase tracking-tighter text-transparent ml-0 md:ml-20 mt-4 md:mt-0"
             style={{
               WebkitTextStroke: '2px #ffffff',
               textShadow: '0 0 20px rgba(255, 255, 255, 0.5)'
@@ -43,14 +43,14 @@ export const Hero = () => {
         </h1>
       </motion.div>
 
-      {/* Central Character */}
+      {/* Central Character (Absolute positioning for perfect overlapping on mobile and desktop) */}
       <motion.div 
-        className="relative z-10 w-full h-full flex items-end justify-center pointer-events-none px-4"
+        className="absolute bottom-0 left-0 w-full h-full z-10 flex items-end justify-center pointer-events-none px-4"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
       >
-        <div className="relative w-full max-w-[320px] sm:max-w-[450px] md:max-w-[800px] h-[60vh] md:h-[90%] max-h-[1000px]">
+        <div className="relative w-full max-w-[340px] sm:max-w-[480px] md:max-w-[800px] h-[75vh] md:h-[90%] max-h-[1000px]">
           <Image 
             src="/squid_guard_final.png" 
             alt="Squid Game Guard" 
