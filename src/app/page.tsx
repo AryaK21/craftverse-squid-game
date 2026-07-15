@@ -65,9 +65,9 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Main Content (Visible instantly but overlays behind LoadingScreen via z-index) */}
-      <Navbar />
-      <Hero />
+      {/* Main Content */}
+      <Navbar isReady={imagesLoaded} />
+      <Hero isReady={imagesLoaded} />
       <StatsBar />
       <VideoScrubSection images={preloadedImages} imagesLoaded={imagesLoaded} />
       <CoreContent />

@@ -6,7 +6,11 @@ import Image from 'next/image';
 import { ArrowDown } from 'lucide-react';
 import { Circle, Triangle, Square } from './Shapes';
 
-export const Hero = () => {
+interface HeroProps {
+  isReady: boolean;
+}
+
+export const Hero = ({ isReady }: HeroProps) => {
   return (
     <section id="home" className="relative w-full h-[100vh] min-h-[800px] flex items-center justify-center overflow-hidden bg-transparent">
       
@@ -24,7 +28,7 @@ export const Hero = () => {
       <motion.div 
         className="absolute inset-0 z-0 w-full flex flex-col items-center justify-center pointer-events-none px-4"
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={isReady ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <h1 className="text-[25vw] md:text-[15vw] leading-[0.75] font-display font-black uppercase tracking-tighter text-transparent"
@@ -47,7 +51,7 @@ export const Hero = () => {
       <motion.div 
         className="absolute bottom-0 left-0 w-full h-full z-10 flex items-end justify-center pointer-events-none px-4"
         initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        animate={isReady ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
       >
         <div className="relative w-full max-w-[340px] sm:max-w-[480px] md:max-w-[800px] h-[75vh] md:h-[90%] max-h-[1000px]">
@@ -69,7 +73,7 @@ export const Hero = () => {
         <motion.div 
           className="bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-6 pointer-events-auto w-full md:w-auto justify-center md:justify-start"
           initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={isReady ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
           <div className="flex -space-x-4 flex-shrink-0">
@@ -93,7 +97,7 @@ export const Hero = () => {
         <motion.div 
           className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center pointer-events-auto"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={isReady ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className="relative w-32 h-32 flex items-center justify-center group cursor-pointer">
@@ -115,7 +119,7 @@ export const Hero = () => {
         <motion.button 
           className="bg-[#F62A54] hover:bg-[#ff3b66] text-white font-sans font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-md pointer-events-auto w-full md:w-auto text-center transition-colors shadow-[0_0_20px_rgba(246,42,84,0.4)]"
           initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={isReady ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
           Join the Game

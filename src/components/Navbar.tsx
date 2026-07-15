@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-export const Navbar = () => {
+export const Navbar = ({ isReady }: { isReady: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -36,8 +36,8 @@ export const Navbar = () => {
       <motion.nav 
         className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-6 text-white"
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+        animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="flex items-center">
           <h1 className="font-display font-bold text-lg md:text-xl uppercase leading-tight tracking-wider text-[#F62A54]">
