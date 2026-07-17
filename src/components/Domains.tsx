@@ -79,7 +79,7 @@ const Planet = ({
 
   return (
     <motion.div
-      className="absolute flex flex-col items-center gap-1.5"
+      className="absolute flex flex-col items-center gap-2.5"
       style={{
         x,
         y,
@@ -93,20 +93,20 @@ const Planet = ({
       <div
         className="rounded-full flex-shrink-0"
         style={{
-          width: '10px',
-          height: '10px',
+          width: '14px',
+          height: '14px',
           background: color,
-          boxShadow: `0 0 8px ${color}, 0 0 18px ${color}50`,
+          boxShadow: `0 0 10px ${color}, 0 0 22px ${color}50`,
         }}
       />
       {/* Always-visible label */}
       <div
-        className="whitespace-nowrap font-sans font-bold uppercase pointer-events-none"
+        className="whitespace-nowrap font-sans font-extrabold uppercase pointer-events-none"
         style={{
-          fontSize: '8px',
-          letterSpacing: '0.25em',
+          fontSize: '18px',
+          letterSpacing: '0.15em',
           color,
-          textShadow: `0 0 8px ${color}80`,
+          textShadow: `0 2px 4px rgba(0,0,0,1), 0 0 10px ${color}, 0 0 20px ${color}80`,
         }}
       >
         {name}
@@ -146,7 +146,18 @@ export const Domains = () => {
       </motion.div>
 
       {/* ── Orbit system (hidden on small screens) ─────────── */}
-      <div ref={ref} className="hidden md:flex relative items-center justify-center" style={{ height: '900px' }}>
+      <div
+        ref={ref}
+        className="hidden md:flex relative items-center justify-center rounded-3xl border border-white/10 backdrop-blur-md"
+        style={{
+          height: '800px',
+          background: 'rgba(0, 0, 0, 0.55)',
+          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4), inset 0 0 60px rgba(255, 255, 255, 0.05)',
+          width: 'calc(100% - 64px)',
+          maxWidth: '1280px',
+          margin: '0 auto',
+        }}
+      >
         {/* Decorative orbit ellipses */}
         <svg
           className="absolute pointer-events-none"

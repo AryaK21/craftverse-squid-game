@@ -23,24 +23,13 @@ const DAYS = [
     label: 'Day Two',
     color: '#037A76',
     events: [
-      { time: '8:00 AM', event: 'Evaluation Round 2' },
-      { time: 'Morning', event: 'Breakfast & Coding' },
-      { time: 'Afternoon', event: 'Interactive Activities' },
-      { time: 'Afternoon', event: 'Mentor Sessions' },
-      { time: '5:00 PM', event: 'Evaluation Round 3' },
-      { time: 'Evening', event: 'Feedback & Improvements' },
-      { time: '8:00 PM', event: 'Dinner & Overnight Coding' },
-    ],
-  },
-  {
-    day: '03',
-    label: 'Day Three',
-    color: '#ffffff',
-    events: [
-      { time: '8:00 AM', event: 'Final Evaluation' },
-      { time: '11:00 AM', event: 'Final Submission' },
-      { time: '12:00 PM', event: 'Closing Ceremony' },
-      { time: 'Afternoon', event: 'Prize Distribution 🏆' },
+      { time: '8:00 AM', event: 'Breakfast & Coding' },
+      { time: '9:00 AM', event: 'Evaluation Round 2' },
+      { time: '11:00 AM', event: 'Mentor Sessions' },
+      { time: '1:00 PM', event: 'Final Submission' },
+      { time: '2:00 PM', event: 'Final Evaluation' },
+      { time: '3:30 PM', event: 'Closing Ceremony' },
+      { time: '4:00 PM', event: 'Prize Distribution 🏆' },
     ],
   },
 ];
@@ -201,7 +190,7 @@ export const Roadmap = () => {
             Mission Roadmap
           </div>
           <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-widest mt-3">
-            48 Hours. 3 Days.
+            30 Hours. 2 Days.
           </h2>
           <p className="text-gray-500 font-sans text-sm mt-4" style={{ letterSpacing: '0.3em' }}>
             One outcome: survive.
@@ -209,7 +198,7 @@ export const Roadmap = () => {
         </motion.div>
 
         {/* Cards */}
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {DAYS.map((day, i) => (
             <FlipCard key={day.day} day={day} index={i} isInView={isInView} />
           ))}

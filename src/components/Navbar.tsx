@@ -26,7 +26,7 @@ export const Navbar = ({ isReady }: { isReady: boolean }) => {
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#games", label: "Games" },
+    { href: "#contact", label: "Contact" },
     { href: "#rules", label: "Rules" },
     { href: "#faqs", label: "FAQs" }
   ];
@@ -41,7 +41,7 @@ export const Navbar = ({ isReady }: { isReady: boolean }) => {
       >
         <div className="flex items-center">
           <h1 className="font-display font-bold text-lg md:text-xl uppercase leading-tight tracking-wider text-[#F62A54]">
-            Craftverse
+            Craftverse 2.0
           </h1>
         </div>
 

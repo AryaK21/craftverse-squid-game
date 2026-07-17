@@ -38,18 +38,16 @@ export const Footer = () => {
   };
 
   return (
-    <motion.footer 
-      id="faqs"
+    <footer 
+      id="contact"
       className="bg-[#020202] text-white py-20 px-6 border-t border-gray-900 relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={footerVariants}
     >
+      {/* Target for FAQs link */}
+      <div id="faqs" className="absolute top-0 left-0" />
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
         
         {/* Branding */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start gap-4">
+        <div className="flex flex-col items-center md:items-start gap-4">
           <h2 className="text-3xl font-display font-bold uppercase tracking-widest text-[#F62A54]">
             Craftverse
           </h2>
@@ -58,15 +56,15 @@ export const Footer = () => {
             <Triangle className="w-6 h-6" />
             <Square className="w-6 h-6" />
           </div>
-        </motion.div>
+        </div>
 
         {/* Contact Links */}
-        <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           
           {/* Email with Copy */}
           <button 
             onClick={handleCopy}
-            className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+            className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors cursor-pointer"
           >
             <div className="p-3 bg-gray-900 rounded-full group-hover:bg-[#F62A54] group-hover:-translate-y-1 transition-all duration-300">
               {copied ? <Check size={20} /> : <Mail size={20} />}
@@ -91,15 +89,15 @@ export const Footer = () => {
             <span className="font-sans text-lg">@craftverse</span>
           </a>
 
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div variants={itemVariants} className="mt-16 text-center text-gray-600 font-sans text-sm relative z-10">
+      <div className="mt-16 text-center text-gray-600 font-sans text-sm relative z-10">
         &copy; {new Date().getFullYear()} Craftverse. All rights reserved. Let the games begin.
-      </motion.div>
+      </div>
 
       {/* Decorative Background Element */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-[#F62A54] opacity-5 blur-[100px] pointer-events-none" />
-    </motion.footer>
+    </footer>
   );
 };

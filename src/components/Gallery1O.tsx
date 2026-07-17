@@ -28,7 +28,7 @@ const CHAPTERS = [
     id: 'floor',
     label: 'Chapter 02',
     title: 'THE ARENA WAS REAL',
-    subtitle: '48 hours. No shortcuts.',
+    subtitle: '30 hours. No shortcuts.',
     photos: [
       { src: '/gallery/photo-03.jpeg', caption: 'Floor Opens', rot: 2, x: 3, y: 15 },
       { src: '/gallery/photo-04.jpeg', caption: 'Round 1 Begins', rot: -4, x: 31, y: 12 },
@@ -181,7 +181,7 @@ export const Gallery1O = () => {
 
           {/* Stats */}
           <div className="hidden md:flex gap-8">
-            {[['13+', 'Finalist Teams'], ['₹1L+', 'Prize Pool'], ['100+', 'Colleges']].map(
+            {[['30+', 'Finalist Teams'], ['₹50K', 'Prize Pool'], ['100+', 'Colleges']].map(
               ([val, label]) => (
                 <div key={label} className="text-center">
                   <div className="text-white font-display font-bold text-lg leading-none">{val}</div>
@@ -204,7 +204,7 @@ export const Gallery1O = () => {
             return (
               <div
                 key={ch.id}
-                className="relative flex-shrink-0 overflow-hidden"
+                className="relative flex-shrink-0 overflow-hidden flex flex-col"
                 style={{ width: '100vw', height: '100vh' }}
               >
                 {/* Subtle grid */}
@@ -219,8 +219,8 @@ export const Gallery1O = () => {
 
                 {/* Chapter heading */}
                 <motion.div
-                  className="absolute z-20 px-6 md:px-10"
-                  style={{ top: '88px' }}
+                  className="relative z-20 px-6 md:px-10 flex-shrink-0"
+                  style={{ paddingTop: '88px' }}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                   transition={{ duration: 0.5 }}
@@ -239,35 +239,35 @@ export const Gallery1O = () => {
                   </p>
                 </motion.div>
 
-                {/* SVG red-string connections */}
-                <svg
-                  className="absolute inset-0 pointer-events-none z-10"
-                  style={{ width: '100%', height: '100%' }}
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                >
-                  {ch.strings.map((s, si) => (
-                    <motion.path
-                      key={si}
-                      d={`M${s.x1} ${s.y1} L${s.x2} ${s.y2}`}
-                      stroke="#F62A54"
-                      strokeWidth="0.25"
-                      strokeDasharray="0.6 0.6"
-                      fill="none"
-                      opacity={0.55}
-                      initial={{ pathLength: 0, opacity: 0 }}
-                      animate={
-                        isActive
-                          ? { pathLength: 1, opacity: 0.55 }
-                          : { pathLength: 0, opacity: 0 }
-                      }
-                      transition={{ delay: si * 0.25 + 0.6, duration: 0.7 }}
-                    />
-                  ))}
-                </svg>
-
                 {/* Polaroid board */}
-                <div className="absolute inset-0" style={{ paddingTop: '160px' }}>
+                <div className="relative flex-1 w-full z-10">
+                  {/* SVG red-string connections inside the board so it is relative to the board */}
+                  <svg
+                    className="absolute inset-0 pointer-events-none z-10"
+                    style={{ width: '100%', height: '100%' }}
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                  >
+                    {ch.strings.map((s, si) => (
+                      <motion.path
+                        key={si}
+                        d={`M${s.x1} ${s.y1} L${s.x2} ${s.y2}`}
+                        stroke="#F62A54"
+                        strokeWidth="0.25"
+                        strokeDasharray="0.6 0.6"
+                        fill="none"
+                        opacity={0.55}
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={
+                          isActive
+                            ? { pathLength: 1, opacity: 0.55 }
+                            : { pathLength: 0, opacity: 0 }
+                        }
+                        transition={{ delay: si * 0.25 + 0.6, duration: 0.7 }}
+                      />
+                    ))}
+                  </svg>
+
                   {ch.photos.map((photo, pi) => (
                     <Polaroid
                       key={pi}
@@ -280,7 +280,7 @@ export const Gallery1O = () => {
 
                 {/* "CRAFTVERSE 1.0" watermark bottom-right */}
                 <div
-                  className="absolute bottom-8 right-8 font-display font-black uppercase text-white/5 pointer-events-none select-none"
+                  className="absolute bottom-8 right-8 font-display font-black uppercase text-white/5 pointer-events-none select-none z-0"
                   style={{ fontSize: 'clamp(32px, 8vw, 96px)', letterSpacing: '-0.02em' }}
                 >
                   CRAFTVERSE

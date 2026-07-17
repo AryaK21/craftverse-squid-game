@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 
 export const StatsBar = () => {
   const stats = [
-    { value: "48 Hrs", label: "Continuous Hackathon" },
+    { value: "30 Hrs", label: "Continuous Hackathon" },
     { value: "1200+", label: "Team Registrations" },
-    { value: "₹1,15,000+", label: "Total Prize Pool" },
+    { value: "₹60,000", label: "Total Prize Pool" },
     { value: "100+", label: "Colleges Participating" }
   ];
 

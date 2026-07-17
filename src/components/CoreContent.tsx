@@ -43,23 +43,26 @@ export const CoreContent = () => {
 
       <div className="max-w-6xl mx-auto relative z-10 space-y-40">
         
-        {/* What is Craftverse */}
         <motion.section 
           id="about"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={slideLeftVariants}
-          className="max-w-3xl"
+          className="max-w-3xl relative"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-[#F62A54] mb-8 flex items-center gap-4">
-            <Triangle className="w-8 h-8 md:w-12 md:h-12" /> What is Craftverse?
-          </h2>
-          <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-sans">
-            Craftverse is not just an event; it's a survival of the most creative minds. 
-            A high-stakes design and development hackathon where only the most innovative ideas make it to the final round. 
-            Step into the arena and prove your worth.
-          </p>
+          {/* Translucent backdrop blur card */}
+          <div className="absolute inset-0 bg-[#037A76] rounded-3xl blur-xl opacity-5" />
+          <div className="relative bg-black/60 backdrop-blur-md border border-gray-800/60 p-8 sm:p-12 rounded-3xl transition-all duration-300 hover:border-[#037A76]/40 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#F62A54] mb-6 flex items-center gap-4">
+              <Triangle className="w-8 h-8 md:w-10 md:h-10" /> What is Craftverse?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-sans">
+              Craftverse is not just an event; it's a survival of the most creative minds. 
+              A high-stakes design and development hackathon where only the most innovative ideas make it to the final round. 
+              Step into the arena and prove your worth.
+            </p>
+          </div>
         </motion.section>
 
         {/* Craftverse Squid Game Theme (Hover Reveal) */}
@@ -90,8 +93,11 @@ export const CoreContent = () => {
               </div>
             </div>
             {/* Reveal text on hover */}
-            <div className="absolute inset-0 bg-[#F62A54] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl">
-              <h3 className="text-6xl md:text-8xl font-display font-black text-black uppercase tracking-[0.2em] transform scale-90 group-hover:scale-100 transition-transform duration-500">
+            <div className="absolute inset-0 bg-black/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl">
+              <h3 
+                className="text-2xl sm:text-3xl md:text-4xl font-display font-black text-[#F62A54]/60 uppercase tracking-[0.3em] absolute bottom-6 right-6 sm:bottom-10 sm:right-10 md:bottom-12 md:right-12 transform scale-95 group-hover:scale-100 transition-all duration-500"
+                style={{ textShadow: '0 0 15px rgba(246,42,84,0.3)' }}
+              >
                 Survival
               </h3>
             </div>
@@ -109,7 +115,7 @@ export const CoreContent = () => {
           <button className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-transparent overflow-hidden rounded-full animate-pulse-slow">
             <div className="absolute inset-0 w-full h-full border-4 border-[#F62A54] rounded-full group-hover:bg-[#F62A54] transition-colors duration-300" />
             <span className="relative z-10 text-3xl font-display font-bold text-[#F62A54] group-hover:text-black transition-colors duration-300 uppercase tracking-widest">
-              Enter The Game
+              REGISTER NOW
             </span>
             <ArrowRight className="relative z-10 text-[#F62A54] group-hover:text-black transition-colors duration-300 w-8 h-8 transform group-hover:translate-x-2" />
           </button>

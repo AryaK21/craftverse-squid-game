@@ -4,10 +4,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const PRIZES = [
-  { rank: 'Winner', amount: '₹60,000', color: '#FFD700' },
-  { rank: '1st Runner-Up', amount: '₹25,000', color: '#C0C0C0' },
-  { rank: '2nd Runner-Up', amount: '₹15,000', color: '#CD7F32' },
-  { rank: 'Consolation (×2)', amount: '₹10,000', color: '#F62A54' },
+  { rank: '1st Runner-Up', amount: '₹25,000', color: '#FFD700' },
+  { rank: '2nd Runner-Up', amount: '₹15,000', color: '#C0C0C0' },
+  { rank: '3rd Runner-Up', amount: '₹10,000', color: '#CD7F32' },
+  { rank: 'Consolation (×2)', amount: '₹5,000', color: '#F62A54' },
   { rank: 'Games & Quiz', amount: '₹5,000', color: '#037A76' },
 ];
 
@@ -49,7 +49,8 @@ export const PrizeVault = () => {
           </h2>
         </motion.div>
 
-        <div ref={ref} className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
+        <div ref={ref} className="relative p-8 sm:p-12 md:p-16 rounded-3xl bg-black/60 backdrop-blur-md border border-gray-800/60 shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
+          <div className="absolute inset-0 bg-[#F62A54] rounded-3xl blur-xl opacity-5 pointer-events-none" />
           {/* ── Vault illustration ──────────────────────────── */}
           <div
             className="flex-shrink-0 relative"
@@ -74,6 +75,43 @@ export const PrizeVault = () => {
               style={{ boxShadow: '0 0 50px rgba(246,42,84,0.35), inset 0 0 30px rgba(246,42,84,0.08)' }}
             />
 
+            {/* Money explosion animation when open */}
+            {phase >= 2 && (
+              <div className="absolute inset-0 pointer-events-none overflow-visible z-10">
+                {Array.from({ length: 12 }).map((_, i) => {
+                  const angle = (i / 12) * Math.PI * 2 + (Math.random() * 0.5);
+                  const distance = 60 + Math.random() * 120;
+                  const x = Math.cos(angle) * distance;
+                  const y = Math.sin(angle) * distance - 60; // float upwards
+                  const rotate = Math.random() * 360;
+                  return (
+                    <motion.div
+                      key={i}
+                      className="absolute left-1/2 top-1/2 text-2xl"
+                      initial={{ x: 0, y: 0, scale: 0.1, opacity: 0, rotate: 0 }}
+                      animate={{
+                        x: x,
+                        y: y,
+                        scale: [0.1, 1.3, 0.7],
+                        opacity: [0, 1, 1, 0],
+                        rotate: rotate,
+                      }}
+                      transition={{
+                        duration: 2.2 + Math.random() * 1.2,
+                        delay: 0.2 + Math.random() * 1.5,
+                        repeat: Infinity,
+                        repeatDelay: Math.random() * 0.8,
+                        ease: 'easeOut',
+                      }}
+                      style={{ marginLeft: '-12px', marginTop: '-12px' }}
+                    >
+                      {i % 3 === 0 ? '🪙' : i % 3 === 1 ? '💵' : '💸'}
+                    </motion.div>
+                  );
+                })}
+              </div>
+            )}
+
             {/* Vault door that swings open */}
             <motion.div
               className="absolute inset-0 rounded-xl flex flex-col items-center justify-center gap-6"
@@ -83,7 +121,7 @@ export const PrizeVault = () => {
                 transformOrigin: 'left center',
                 transformStyle: 'preserve-3d',
               }}
-              animate={phase >= 2 ? { rotateY: -82 } : { rotateY: 0 }}
+              animate={phase >= 2 ? { rotateY: -30 } : { rotateY: 0 }}
               transition={{ duration: 1.3, ease: [0.4, 0, 0.2, 1] }}
             >
               {/* Engraving border rings */}
@@ -163,14 +201,14 @@ export const PrizeVault = () => {
                 >
                   <div>
                     <div
-                      className="font-sans uppercase font-medium text-gray-400"
-                      style={{ fontSize: '11px', letterSpacing: '0.3em' }}
+                      className="font-sans uppercase font-bold text-gray-200 text-sm sm:text-base"
+                      style={{ letterSpacing: '0.25em' }}
                     >
                       {prize.rank}
                     </div>
                   </div>
                   <motion.div
-                    className="font-display font-black text-2xl md:text-3xl"
+                    className="font-display font-black text-3xl sm:text-4xl"
                     style={{
                       color: prize.color,
                       textShadow: `0 0 24px ${prize.color}70`,
@@ -202,7 +240,7 @@ export const PrizeVault = () => {
                 className="font-display font-black text-3xl md:text-4xl text-[#F62A54]"
                 style={{ textShadow: '0 0 30px rgba(246,42,84,0.8)' }}
               >
-                ₹1,15,000
+                ₹60,000
               </div>
             </motion.div>
           </div>

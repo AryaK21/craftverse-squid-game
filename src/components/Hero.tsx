@@ -88,13 +88,13 @@ export const Hero = ({ isReady }: HeroProps) => {
             </div>
           </div>
           <div>
-            <h3 className="text-white font-display font-bold text-base md:text-lg">New games</h3>
+            <h3 className="text-white font-display font-bold text-base md:text-lg">Domains</h3>
             <p className="text-gray-400 text-xxs md:text-xs font-sans mt-0.5">People will play for the money</p>
           </div>
         </motion.div>
 
         {/* Center Circular Scroll Indicator (Hidden on mobile for layout sanity) */}
-        <motion.div 
+        {/* <motion.div 
           className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center pointer-events-auto"
           initial={{ opacity: 0 }}
           animate={isReady ? { opacity: 1 } : { opacity: 0 }}
@@ -113,7 +113,7 @@ export const Hero = ({ isReady }: HeroProps) => {
               <ArrowDown className="text-white w-6 h-6" />
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Right CTA Button */}
         <motion.button 

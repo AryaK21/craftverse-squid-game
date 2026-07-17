@@ -2,9 +2,9 @@
 
 ## What is CraftVerse?
 
-**48 Hours of Innovation • Coding • Collaboration • Career Opportunities**
+**30 Hours of Innovation • Coding • Collaboration • Career Opportunities**
 
-CraftVerse 2.0 is a national-level open innovation hackathon where students collaborate to solve real-world problems through technology, innovation, and teamwork. Featuring a 48-hour coding marathon, industry mentorship, prototype development, networking, and direct hiring opportunities.
+CraftVerse 2.0 is a national-level open innovation hackathon where students collaborate to solve real-world problems through technology, innovation, and teamwork. Featuring a 30-hour coding marathon, industry mentorship, prototype development, networking, and direct hiring opportunities.
 
 **Organised by:** PCCOER (Pimpri Chinchwad College of Engineering and Research)
 
@@ -55,7 +55,7 @@ To establish CraftVerse as PCCOER's flagship national-level innovation and hirin
 
 ### Event Highlights
 
-- 48 hours of continuous coding and innovation
+- 30 hours of continuous coding and innovation
 - National-level participation and competitive spirit
 - Industry keynote session and technical mentorship
 - Problem statement release and prototype development
@@ -64,7 +64,7 @@ To establish CraftVerse as PCCOER's flagship national-level innovation and hirin
 
 ---
 
-### Full Event Roadmap — Plan A: 48 Hrs Hackathon
+### Full Event Roadmap — Plan A: 30 Hrs Hackathon
 
 #### Day 1
 | Time | Activity |
@@ -101,12 +101,12 @@ To establish CraftVerse as PCCOER's flagship national-level innovation and hirin
 
 | Category | Amount (₹) |
 |---|---|
-| Winner | ₹60,000 |
-| First Runner-Up | ₹25,000 |
-| Second Runner-Up | ₹15,000 |
-| Two Consolation Winners | ₹10,000 |
+| 1st Runner-Up | ₹25,000 |
+| 2nd Runner-Up | ₹15,000 |
+| 3rd Runner-Up | ₹10,000 |
+| Two Consolation Winners | ₹5,000 |
 | Games & Quiz Winners | ₹5,000 |
-| **Total Prize Pool** | **₹1,15,000+** |
+| **Total Prize Pool** | **₹60,000** |
 
 ---
 
