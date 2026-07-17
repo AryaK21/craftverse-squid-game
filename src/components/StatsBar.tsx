@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 export const StatsBar = () => {
   const stats = [
-    { value: "1.65B+", label: "Hours Streamed in 28 Days" },
-    { value: "94", label: "Country's Top Ranked" },
-    { value: "$900M+", label: "Value for Netflix" },
-    { value: "142M", label: "Households Watched" }
+    { value: "48 Hrs", label: "Continuous Hackathon" },
+    { value: "1200+", label: "Team Registrations" },
+    { value: "₹1,15,000+", label: "Total Prize Pool" },
+    { value: "100+", label: "Colleges Participating" }
   ];
 
   const containerVariants = {

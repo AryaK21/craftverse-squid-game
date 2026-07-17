@@ -1,31 +1,9 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useInView, animate } from 'framer-motion';
-import { Users, Star, Trophy, ArrowRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Square, Triangle, Circle } from './Shapes';
-
-// Counter component for animating numbers
-const Counter = ({ from = 0, to, duration = 2 }: { from?: number, to: number, duration?: number }) => {
-  const nodeRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (inView && nodeRef.current) {
-      const controls = animate(from, to, {
-        duration,
-        onUpdate(value) {
-          if (nodeRef.current) {
-            nodeRef.current.textContent = Math.round(value).toString();
-          }
-        },
-      });
-      return () => controls.stop();
-    }
-  }, [from, to, duration, inView]);
-
-  return <span ref={nodeRef} className="font-display font-bold tabular-nums" />;
-};
 
 export const CoreContent = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,14 +17,6 @@ export const CoreContent = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 90]);
   const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -90]);
-
-  const staggerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3 }
-    }
-  };
 
   const slideLeftVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -90,39 +60,6 @@ export const CoreContent = () => {
             A high-stakes design and development hackathon where only the most innovative ideas make it to the final round. 
             Step into the arena and prove your worth.
           </p>
-        </motion.section>
-
-        {/* Success Story 1.0 */}
-        <motion.section 
-          id="rules"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerVariants}
-        >
-          <motion.h2 variants={slideLeftVariants} className="text-3xl md:text-5xl font-display font-bold text-[#037A76] mb-12 flex items-center gap-4">
-            <Circle className="w-8 h-8 md:w-12 md:h-12" /> The Legacy of 1.0
-          </motion.h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: <Users size={40} className="text-[#F62A54]" />, count: 1500, label: "Participants" },
-              { icon: <Trophy size={40} className="text-[#037A76]" />, count: 50, label: "Winning Teams" },
-              { icon: <Star size={40} className="text-white" />, count: 200, label: "Projects Built" },
-            ].map((stat, idx) => (
-              <motion.div 
-                key={idx}
-                variants={scaleUpVariants}
-                className="bg-black/50 border border-gray-800 p-8 rounded-2xl backdrop-blur-sm hover:border-[#F62A54] transition-colors duration-300"
-              >
-                <div className="mb-6">{stat.icon}</div>
-                <div className="text-5xl font-display font-bold mb-2">
-                  <Counter to={stat.count} />+
-                </div>
-                <div className="text-xl text-gray-400 font-sans">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
         </motion.section>
 
         {/* Craftverse Squid Game Theme (Hover Reveal) */}

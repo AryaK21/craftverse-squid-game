@@ -7,6 +7,10 @@ import { Hero } from "@/components/Hero";
 import { StatsBar } from "@/components/StatsBar";
 import { VideoScrubSection } from "@/components/VideoScrubSection";
 import { CoreContent } from "@/components/CoreContent";
+import { Gallery1O } from "@/components/Gallery1O";
+import { Domains } from "@/components/Domains";
+import { Roadmap } from "@/components/Roadmap";
+import { PrizeVault } from "@/components/PrizeVault";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
@@ -57,7 +61,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full flex flex-col items-center overflow-x-hidden selection:bg-[#F62A54] selection:text-white relative">
+    <main className="w-full flex flex-col items-center [overflow-x:clip] selection:bg-[#F62A54] selection:text-white relative">
       {/* Cinematic Loading Buffer Screen */}
       <AnimatePresence mode="wait">
         {!imagesLoaded && (
@@ -70,7 +74,11 @@ export default function Home() {
       <Hero isReady={imagesLoaded} />
       <StatsBar />
       <VideoScrubSection images={preloadedImages} imagesLoaded={imagesLoaded} />
+      <Gallery1O />
       <CoreContent />
+      <Domains />
+      <Roadmap />
+      <PrizeVault />
       <Footer />
     </main>
   );
