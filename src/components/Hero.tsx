@@ -70,8 +70,10 @@ export const Hero = ({ isReady }: HeroProps) => {
       <div className="absolute bottom-6 md:bottom-12 w-full px-6 md:px-12 z-20 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 pointer-events-none">
         
         {/* Left Card: New Games */}
-        <motion.div 
-          className="bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-6 pointer-events-auto w-full md:w-auto justify-center md:justify-start"
+        <motion.a
+          href="#domains"
+          onClick={(e) => { e.preventDefault(); document.getElementById('domains')?.scrollIntoView({ behavior: 'smooth' }); }}
+          className="bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-6 pointer-events-auto w-full md:w-auto justify-center md:justify-start cursor-pointer hover:border-white/30 transition-colors"
           initial={{ x: -50, opacity: 0 }}
           animate={isReady ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -91,7 +93,7 @@ export const Hero = ({ isReady }: HeroProps) => {
             <h3 className="text-white font-display font-bold text-base md:text-lg">Domains</h3>
             <p className="text-gray-400 text-xxs md:text-xs font-sans mt-0.5">People will play for the money</p>
           </div>
-        </motion.div>
+        </motion.a>
 
         {/* Center Circular Scroll Indicator (Hidden on mobile for layout sanity) */}
         {/* <motion.div 
@@ -116,13 +118,13 @@ export const Hero = ({ isReady }: HeroProps) => {
         </motion.div> */}
 
         {/* Right CTA Button */}
-        <motion.button 
+        <motion.button
           className="bg-[#F62A54] hover:bg-[#ff3b66] text-white font-sans font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-md pointer-events-auto w-full md:w-auto text-center transition-colors shadow-[0_0_20px_rgba(246,42,84,0.4)]"
           initial={{ x: 50, opacity: 0 }}
           animate={isReady ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          Join the Game
+          Register Now
         </motion.button>
 
       </div>

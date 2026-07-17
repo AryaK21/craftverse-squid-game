@@ -6,6 +6,7 @@ import {
   useMotionValue,
   useInView,
 } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const INNER_DOMAINS = [
   { name: 'AI & ML', color: '#F62A54' },
@@ -120,7 +121,7 @@ export const Domains = () => {
   const isInView = useInView(ref, { once: false, margin: '-80px' });
 
   return (
-    <section className="w-full py-24 md:py-32 bg-transparent text-white">
+    <section id="domains" className="w-full py-24 md:py-32 bg-transparent text-white">
       {/* Section heading */}
       <motion.div
         className="text-center mb-12 px-6"
@@ -262,6 +263,23 @@ export const Domains = () => {
       >
         Hover a planet to reveal its domain
       </p>
+
+      {/* Register Now CTA */}
+      <motion.div
+        className="text-center mt-12 pb-4"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <button className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-transparent overflow-hidden rounded-full animate-pulse-slow">
+          <div className="absolute inset-0 w-full h-full border-4 border-[#F62A54] rounded-full group-hover:bg-[#F62A54] transition-colors duration-300" />
+          <span className="relative z-10 text-3xl font-display font-bold text-[#F62A54] group-hover:text-black transition-colors duration-300 uppercase tracking-widest">
+            REGISTER NOW
+          </span>
+          <ArrowRight className="relative z-10 text-[#F62A54] group-hover:text-black transition-colors duration-300 w-8 h-8 transform group-hover:translate-x-2" />
+        </button>
+      </motion.div>
     </section>
   );
 };
