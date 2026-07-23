@@ -272,13 +272,18 @@ export const Domains = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <button className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-transparent overflow-hidden rounded-full animate-pulse-slow">
+        <a
+          href="https://unstop.com/o/VRp1FBM?lb=WvvEbrlV&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Craft20227087"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-transparent overflow-hidden rounded-full animate-pulse-slow"
+        >
           <div className="absolute inset-0 w-full h-full border-4 border-[#F62A54] rounded-full group-hover:bg-[#F62A54] transition-colors duration-300" />
           <span className="relative z-10 text-3xl font-display font-bold text-[#F62A54] group-hover:text-black transition-colors duration-300 uppercase tracking-widest">
             REGISTER NOW
           </span>
           <ArrowRight className="relative z-10 text-[#F62A54] group-hover:text-black transition-colors duration-300 w-8 h-8 transform group-hover:translate-x-2" />
-        </button>
+        </a>
       </motion.div>
     </section>
   );

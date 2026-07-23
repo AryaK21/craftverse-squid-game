@@ -118,14 +118,17 @@ export const Hero = ({ isReady }: HeroProps) => {
         </motion.div> */}
 
         {/* Right CTA Button */}
-        <motion.button
+        <motion.a
+          href="https://unstop.com/o/VRp1FBM?lb=WvvEbrlV&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Craft20227087"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#F62A54] hover:bg-[#ff3b66] text-white font-sans font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-md pointer-events-auto w-full md:w-auto text-center transition-colors shadow-[0_0_20px_rgba(246,42,84,0.4)]"
           initial={{ x: 50, opacity: 0 }}
           animate={isReady ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
           Register Now
-        </motion.button>
+        </motion.a>
 
       </div>
     </section>
