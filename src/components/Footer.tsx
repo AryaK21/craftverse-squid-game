@@ -15,7 +15,7 @@ const InstagramIcon = () => (
 
 export const Footer = () => {
   const [copied, setCopied] = useState(false);
-  const email = "hello@craftverse.com";
+  const email = "craftverse_comp2025@pccoer.in";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -74,19 +74,19 @@ export const Footer = () => {
           </button>
 
           {/* Phone */}
-          <a href="tel:+1234567890" className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+          <a href="tel:+918983422606" className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
             <div className="p-3 bg-gray-900 rounded-full group-hover:bg-[#037A76] group-hover:-translate-y-1 transition-all duration-300">
               <Phone size={20} />
             </div>
-            <span className="font-sans text-lg">+1 (234) 567-890</span>
+            <span className="font-sans text-lg">+91 89834 22606</span>
           </a>
 
           {/* Instagram */}
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.instagram.com/craftverse.pccoer?igsh=MXZjaGp0bXpweDAydA%3D%3D" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
             <div className="p-3 bg-gray-900 rounded-full group-hover:bg-white group-hover:text-black group-hover:-translate-y-1 transition-all duration-300">
               <InstagramIcon />
             </div>
-            <span className="font-sans text-lg">@craftverse</span>
+            <span className="font-sans text-lg">@craftverse.pccoer</span>
           </a>
 
         </div>
