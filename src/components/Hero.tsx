@@ -119,7 +119,7 @@ export const Hero = ({ isReady }: HeroProps) => {
 
         {/* Right CTA Button */}
         <motion.a
-          href="https://unstop.com/o/VRp1FBM?lb=WvvEbrlV&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Craft20227087"
+          href="https://unstop.com/hackathons/craftverse-20-pimpri-chinchwad-college-of-engineering-research-pccoer-ravet-pimpri-chinchwad-pune-1719658"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#F62A54] hover:bg-[#ff3b66] text-white font-sans font-bold text-base md:text-lg px-8 py-3.5 md:py-4 rounded-md pointer-events-auto w-full md:w-auto text-center transition-colors shadow-[0_0_20px_rgba(246,42,84,0.4)]"

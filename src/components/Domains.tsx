@@ -273,7 +273,7 @@ export const Domains = () => {
         transition={{ duration: 0.6 }}
       >
         <a
-          href="https://unstop.com/o/VRp1FBM?lb=WvvEbrlV&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Craft20227087"
+          href="https://unstop.com/hackathons/craftverse-20-pimpri-chinchwad-college-of-engineering-research-pccoer-ravet-pimpri-chinchwad-pune-1719658"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-transparent overflow-hidden rounded-full animate-pulse-slow"
